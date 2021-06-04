@@ -14,7 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
         buildConfigField("String","API_KEY",MY_KEY)
-        buildConfigField("String","MASE_URL",MY_URL)
+        buildConfigField("String","BASE_URL",MY_URL)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -50,4 +50,8 @@ dependencies {
 
     // Kotlin Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 }
