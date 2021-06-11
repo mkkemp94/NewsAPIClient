@@ -12,9 +12,9 @@ class NewsRepositoryImpl(
     private val newsRemoteDataSourceImpl: NewsRemoteDataSourceImpl
 ): NewsRepository
 {
-    override suspend fun getNewsHeadlines(): Resource<APIResponse>
+    override suspend fun getNewsHeadlines(country: String, page: Int): Resource<APIResponse>
     {
-        return responseToResource(newsRemoteDataSourceImpl.getTopHeadlines())
+        return responseToResource(newsRemoteDataSourceImpl.getTopHeadlines(country, page))
     }
 
     private fun responseToResource(response: Response<APIResponse>): Resource<APIResponse>

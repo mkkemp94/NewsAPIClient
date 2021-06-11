@@ -6,9 +6,9 @@ import com.mkemp.newsapiclient.domain.repository.NewsRepository
 
 class GetNewsHeadlinesUseCase(private val newsRepository: NewsRepository)
 {
-    suspend fun execute(): Resource<APIResponse>
+    suspend fun execute(country: String, page: Int): Resource<APIResponse>
     {
         // Can modify this data as we please before we send it back to the view model...
-        return newsRepository.getNewsHeadlines()
+        return newsRepository.getNewsHeadlines(country, page)
     }
 }

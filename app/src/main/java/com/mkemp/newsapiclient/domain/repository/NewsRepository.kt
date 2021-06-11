@@ -6,7 +6,7 @@ import com.mkemp.newsapiclient.data.util.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface NewsRepository {
-    suspend fun getNewsHeadlines(): Resource<APIResponse> // When I only care about success or failure I don't really need a callback
+    suspend fun getNewsHeadlines(country: String, page: Int): Resource<APIResponse> // When I only care about success or failure I don't really need a callback
     suspend fun getSearchedNews(searchedQuery: String): Resource<APIResponse>
     suspend fun saveNews(article: Article)
     suspend fun deleteNews(article: Article)
