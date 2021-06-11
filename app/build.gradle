@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id "kotlin-kapt"
 }
 
 android {
@@ -63,4 +64,14 @@ dependencies {
 
     // Provides useful finctions for testing
     testImplementation "com.google.truth:truth:1.1"
+
+    def lifecycle_version = "2.3.1"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    // Annotation processor
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
 }
